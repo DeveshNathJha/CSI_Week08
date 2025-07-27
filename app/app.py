@@ -10,7 +10,7 @@ st.set_page_config(page_title="Loan Chatbot", layout="centered")
 # Load and preprocess the data
 @st.cache_resource
 def load_data():
-    df = pd.read_csv(r"C:\Users\kumar\OneDrive\Desktop\Celebal Technology\loan_chatbot_rag\data\cleaned_loan_dataset.csv")
+    df = pd.read_csv("../data/cleaned_loan_dataset.csv")
     df['combined_text'] = df.fillna('').apply(lambda row: ' '.join(str(x) for x in row), axis=1)
     return df
 
